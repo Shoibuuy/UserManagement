@@ -8,7 +8,7 @@ const express = require('express');
 const app = express();
 
 const nocache = require('nocache');
-app.use(nocache());
+
 
 // for user routes
 const userRoute = require('./routes/userRoute');
