@@ -1,0 +1,29 @@
+<%- include('../layouts/header.ejs') %>
+
+
+
+
+
+<nav class="navbar navbar-light p-2 px-5 bg-light">
+    <a class="navbar-brand text-primary" href="#"><h3>Welcome,<%= user.name %> </h3></a>
+    <a href="/logout" class="btn btn-danger">LogOut</a>
+
+  </nav>
+
+<div class="d-flex justify-content-center">
+    <div class="card" style="width: 18rem;">
+        <img src="userImages/<%= user.image %>" class="card-img-top" alt="...">
+      
+        <div class="card-body">
+            <h6 class="card-title"><%= user.name %></h6>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><%= user.email %></li>
+          <li class="list-group-item"><%= user.mobile %></li>
+        </ul>
+        <a href="/edit?id=<%= user._id %>" class="btn btn-primary">Edit</a>
+
+      </div>
+</div>
+
+<%- include('../layouts/footer.ejs') %>

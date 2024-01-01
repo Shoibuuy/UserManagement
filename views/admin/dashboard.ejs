@@ -1,0 +1,136 @@
+<%- include("../layouts/header.ejs") %>
+
+
+
+
+<nav class="navbar navbar-light p-2 px-5 bg-light">
+    <a href="/admin/home" class="btn btn-primary">Go to Home</a>
+
+    <a class="navbar-brand text-primary" href="#"><h3>dashboard</h3></a>
+    <a href="/admin/new-user" class="btn btn-primary">Add new user</a>
+
+  </nav>
+
+
+<form>
+<div class="input-group d-flex justify-content-center mt-5 mb-5">
+  <div class="form-outline">
+    <input type="search" placeholder="Search User Name, Email , Mobile" name="search" id="form1" class="form-control" />
+  </div>
+  <button type="submit" class="btn btn-primary">
+Search  </button>
+</div>
+    <!-- <input type="text" placeholder="Search User Name, Email , Mobile" name="seacrh">
+    <input type="submit" value="seacrh"> -->
+</form>
+
+<!-- <table width="50%">
+    <tr>
+        <th>Name </th>
+        <th>Email </th>
+        <th>Mobile </th>
+        <th>Image </th>
+        <th>Verified </th>
+        <th>Actions</th>
+    </tr>
+
+    <%
+
+        if(users.length > 0){
+
+            for (let i = 0 ; i< users.length;i++){
+                %>
+                <tr>
+                    <td><%= users[i].name %></td>
+                    <td><%= users[i].email %></td>
+                    <td><%= users[i].mobile %></td>
+                    <td><img src="/userImages/<%= users[i].image %>" alt="<%= users[i].image %>" width="100px"></td>
+                    <td><% 
+                        if(users[i].is_varified === 0){
+                            %>
+                            <p>Not Verified</p>
+                            <%
+                        }else{
+                            %>
+                            <p>Verified</p>
+                            <%
+                        }
+                         %></td>
+                         <td>
+                            <a href="/admin/edit-user?id=<%= users[i]._id %>">Edit</a>
+                            <a href="/admin/delete-user?id=<%= users[i]._id %>">Delete</a>
+                        </td>
+                </tr>
+                <%
+            }
+            
+
+        }else{
+
+            %>
+                <tr>
+                    <td colspan="5">User not Found</td>
+                </tr>
+            <%
+        }
+
+    %>
+
+
+</table> -->
+
+<table class="table table-sm">
+    <thead>
+        <th>Name </th>
+        <th>Email </th>
+        <th>Mobile </th>
+        <th>Image </th>
+        <th>Verified </th>
+        <th>Actions</th>
+      </thead>
+      <tbody>
+            <%
+
+            if(users.length > 0){
+    
+                for (let i = 0 ; i< users.length;i++){
+                    %>
+                    <tr class="table-active">
+                        <td><%= users[i].name %></td>
+                        <td><%= users[i].email %></td>
+                        <td><%= users[i].mobile %></td>
+                        <td><img src="/userImages/<%= users[i].image %>"  class="img-circle" alt="<%= users[i].image %>" width="100px"></td>
+                        <td><% 
+                            if(users[i].is_varified === 0){
+                                %>
+                                <p>Not Verified</p>
+                                <%
+                            }else{
+                                %>
+                                <p>Verified</p>
+                                <%
+                            }
+                             %></td>
+                             <td>
+                                <a href="/admin/edit-user?id=<%= users[i]._id %>" class="btn btn-warning">Edit</a>
+                                <a href="/admin/delete-user?id=<%= users[i]._id %>" class="btn btn-danger">Delete</a>
+                            </td>
+                    </tr>
+                    <%
+                }
+                
+    
+            }else{
+    
+                %>
+                    <tr>
+                        <td colspan="5">User not Found</td>
+                    </tr>
+                <%
+            }
+    
+        %>
+    
+      </tbody>
+  </table>
+<%- include("../layouts/footer.ejs") %>

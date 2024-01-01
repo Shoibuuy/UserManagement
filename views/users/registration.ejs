@@ -1,0 +1,64 @@
+<%- include('../layouts/header.ejs') %>
+
+
+
+
+<section class="vh-100 gradient-custom">
+    <div class="container py-2 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card bg-dark text-white" style="border-radius: 1rem;">
+            <div class="card-body px-5  py-4 text-center">
+  
+              <div class="">
+  
+                <h2 class="fw-bold mb-2 text-uppercase">Register</h2>
+                <form action="" method="post" enctype="multipart/form-data">
+                <div class="form-outline form-white mb-2">
+                    <label class="form-label"  for="typeEmailX">Name</label>
+                  <input type="text" name="name" id="typeEmailX" class="form-control " required>
+                </div>
+  
+                <div class="form-outline form-white mb-2">
+                    <label class="form-label"  for="typePasswordX">Email</label>
+                  <input type="email" name="email" id="typePasswordX" class="form-control" required>
+                </div>
+                <div class="form-outline form-white mb-2">
+                    <label class="form-label"  for="typePasswordX">Mobile</label>
+                    <input type="text" name="mno" id="typePasswordX" class="form-control" required>
+                  </div>
+                  <div class="form-outline form-white mb-2">
+                      <label class="form-label"  for="typePasswordX">Profile</label>
+                    <input type="file" name="image" id="typePasswordX" class="form-control" required>
+                  </div>
+                  <div class="form-outline form-white mb-2">
+                      <label class="form-label"  for="typePasswordX">Password</label>
+                    <input type="password" name="password" id="typePasswordX" class="form-control" required>
+                  </div>
+  
+                <button class="btn btn-outline-light btn-lg px-5" type="submit">Register</button>
+            </form>
+            <a href="/">Back to Login</a>
+              </div>
+  
+             
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<%
+
+    if(typeof message !== 'undefined'){
+        %>
+        <p style="color: green;"><%= message %></p>
+        <%
+    }
+
+%>
+
+<%- include('../layouts/footer.ejs') %>

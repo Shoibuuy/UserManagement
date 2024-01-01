@@ -1,0 +1,95 @@
+<%- include('../layouts/header.ejs') %>
+
+<!-- <h1>Edit User</h1>
+
+
+<form action="" method="post">
+
+    <input type="name" name="name" placeholder="Enter Name" value="<%= user.name %>" required>
+    <br><br>
+    <input type="email" name="email" placeholder="Enter Email" value="<%= user.email %>" required>
+    <br><br>
+    <input type="text" name="mno" placeholder="Enter Mobile" value="<%= user.mobile %>" required>
+    <br><br>
+    <label> Verified </label>
+    <input type="radio" name="verify" value="1" <% if(user.is_varified == 1){ %> checked <% } %>>
+    <label> UnVerified </label>
+    <input type="radio" name="verify" value="0" <% if(user.is_varified == 0){ %> checked <% } %>>
+    <br><br>
+    <input type="submit" value="Update User">
+
+</form>
+
+
+
+<a href="/admin">Go to Dashboard</a> -->
+
+
+
+<div class="container mt-5 bootstrap snippets bootdey">
+    <nav class="navbar navbar-light p-3 px-5 text-center bg-light">
+        <a href="/admin/dashboard" class="btn btn-secondary">Back</a>
+      </nav>
+	<div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        
+        <div class="text-center">
+          <img src="userImages/<%= user.image %>" class="avatar img-circle img-thumbnail" alt="avatar">
+          <h6>Upload a different photo...</h6>
+
+          <form action="" method="post" class="form-horizontal">
+
+<div class="btn btn-dark btn-sm waves-effect waves-light">
+    <input type="file" name="image">
+</div>
+          
+        </div>
+      </div>
+
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+               <h2 class="text-primary mt-0 mb-5">Edit User</h2>
+
+               <input type="hidden" name="id" value="<%= user._id %>">
+               <div class="form-group">
+            <label class="col-lg-3 control-label">Enter Name </label>
+            <div class="col-lg-8">
+              <input  class="form-control" name="name" type="text" value="<%= user.name %>" required>
+              <br>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Enter Email </label>
+            <div class="col-lg-8">
+              <input class="form-control" name="email" type="email" value="<%= user.email %>" required>
+              <br>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Mobile Number</label>
+            <div class="col-lg-8">
+              <input class="form-control" name="mno" type="text" value="<%= user.mobile %>" required>
+              <br>
+            </div>
+          </div>
+          <div>
+            <label> Verified </label>
+            <input type="radio" name="verify" value="1" <% if(user.is_varified == 1){ %> checked <% } %>>
+            <label> UnVerified </label>
+            <input type="radio" name="verify" value="0" <% if(user.is_varified == 0){ %> checked <% } %>>
+            <br><br>
+          </div>
+        
+          <div class="form-group">
+            <div  class="col-lg-8 d-flex justify-content-center">
+                    <input type="submit" class="btn btn-primary" value="Update Profile">
+              </div>
+        </div>
+
+        </form>
+      </div>
+  </div>
+</div>
+
+<%- include('../layouts/footer.ejs') %>

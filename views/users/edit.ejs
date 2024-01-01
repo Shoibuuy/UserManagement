@@ -1,0 +1,76 @@
+
+
+<%- include('../layouts/header.ejs') %>
+
+
+<!-- <form action="" method="post" enctype="multipart/form-data">
+    <input type="file" name="image">
+    <input type="hidden" name="user_id" value="<%= user._id %>">
+    <br><br>
+    <input type="text" name="name" value="<%= user.name %>" placeholder="Enter Name" required>
+    <br><br>
+    <input type="email" name="email" value="<%= user.email %>" placeholder="Enter Email" required>
+    <br><br>
+    <input type="text" name="mno" value="<%= user.mobile %>" placeholder="Enter Mobile" required>
+    <br><br>
+    <input type="submit" value="Update Profile">
+</form> -->
+<nav class="navbar navbar-light p-3 px-5 text-center bg-light">
+    <a href="/home" class="btn btn-secondary">Back to Home</a>
+
+
+  </nav>
+
+<div class="container mt-5 bootstrap snippets bootdey">
+	<div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        
+        <div class="text-center">
+          <img src="userImages/<%= user.image %>" class="avatar img-circle img-thumbnail" alt="avatar">
+          <h6>Upload a different photo...</h6>
+          <form action="" method="post" class="form-horizontal" enctype="multipart/form-data">
+        <div class="btn btn-dark btn-sm waves-effect waves-light">
+        <input type="file" name="image">
+        </div>
+          
+        </div>
+      </div>
+
+      <!-- edit form column -->
+      <div class="col-md-9 personal-info">
+               <h2 class="text-primary mt-0 mb-5">Edit Profile</h2>
+
+            <input type="hidden" name="user_id" value="<%= user._id %>">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Enter Name </label>
+            <div class="col-lg-8">
+              <input  class="form-control" name="name" type="text" value="<%= user.name %>" required>
+              <br>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Enter Email </label>
+            <div class="col-lg-8">
+              <input class="form-control" name="email" type="email" value="<%= user.email %>" required>
+              <br>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Mobile Number</label>
+            <div class="col-lg-8">
+              <input class="form-control" name="mno" type="text" value="<%= user.mobile %>" required>
+              <br>
+            </div>
+          </div>
+          <div class="form-group">
+            <div  class="col-lg-8 d-flex justify-content-center">
+                    <input type="submit" class="btn btn-primary" value="Update Profile">
+              </div>
+        </div>
+        </form>
+      </div>
+  </div>
+</div>
+
+<%- include('../layouts/footer.ejs') %>
